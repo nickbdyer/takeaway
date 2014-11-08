@@ -10,6 +10,10 @@ class Order
     contents << dish
   end
 
+  def remove(dish)
+    contents.delete(dish)
+  end
+
 
 
 end
