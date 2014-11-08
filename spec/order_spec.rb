@@ -29,4 +29,9 @@ describe "Order" do
     expect(order.total).to eq 11
   end
 
+  it "should be possible to add multiple dishes at a time" do
+    order.add penne_arrabbiata, ham_and_cheese_toastie
+    expect(order.contents).to eq [penne_arrabbiata, ham_and_cheese_toastie]
+  end
+
 end

@@ -6,8 +6,8 @@ class Order
     @contents = []
   end
 
-  def add(dish)
-    contents << dish
+  def add(*dishes)
+   dishes.each { |dish| contents << dish } 
   end
 
   def remove(dish)
