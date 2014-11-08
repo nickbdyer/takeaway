@@ -14,6 +14,9 @@ class Order
     contents.delete(dish)
   end
 
+  def total
+    contents.map(&:price).inject(:+)
+  end
 
 
 end

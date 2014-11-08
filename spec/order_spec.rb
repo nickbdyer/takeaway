@@ -3,8 +3,8 @@ require 'order'
 describe "Order" do
 
   let(:order) { Order.new }
-  let(:ham_and_cheese_toastie) { double :dish }
-  let(:penne_arrabbiata) { double :dish }
+  let(:ham_and_cheese_toastie) { double :dish, price: 5 }
+  let(:penne_arrabbiata) { double :dish, price: 6 }
 
   it "should allow dishes to be added" do
     order.add(ham_and_cheese_toastie)
@@ -24,8 +24,9 @@ describe "Order" do
   end
 
   it "should calculate the total of the order" do
-
-
+    order.add(penne_arrabbiata)
+    order.add(ham_and_cheese_toastie)
+    expect(order.total).to eq 11
   end
 
 end
