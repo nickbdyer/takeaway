@@ -17,6 +17,6 @@ class Order
   def total
     contents.map(&:price).inject(:+)
   end
-
+  
 
 end

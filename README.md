@@ -5,6 +5,10 @@ Week 2 Challenge at Makers Academy
 
 This challenge demonstrates use of OOD, OOP, Ruby, RSpec, Gems(Guard, Twilio)
 
+Update 8 Nov 21:30:
+
+There is an increasing similarity between the Menu and Order classes. There may be an opportunity to extract methods into a Module.
+
 Challenge
 ---------
 - [ ] list of dishes with prices
