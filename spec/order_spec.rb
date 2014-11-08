@@ -34,4 +34,10 @@ describe "Order" do
     expect(order.contents).to eq [penne_arrabbiata, ham_and_cheese_toastie]
   end
 
+  it "should be possible to remove multiple dishes at a time" do
+    order.add penne_arrabbiata, ham_and_cheese_toastie
+    order.remove penne_arrabbiata, ham_and_cheese_toastie
+    expect(order.contents).to eq []
+  end
+
 end

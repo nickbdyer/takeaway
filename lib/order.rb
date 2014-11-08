@@ -10,8 +10,8 @@ class Order
    dishes.each { |dish| contents << dish } 
   end
 
-  def remove(dish)
-    contents.delete(dish)
+  def remove(*dishes)
+    dishes.each { |dish| contents.delete(dish) }
   end
 
   def total
