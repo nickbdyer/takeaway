@@ -2,20 +2,26 @@ require 'menu'
 
 describe "Menu" do
 
-  let(:dish) { double :dish }
+  let(:menu) { Menu.new }
+  let(:salad_nicoise) { double :dish }
+  let(:beef_stroganoff) { double :dish }
+  let(:insalata_caprese) { double :dish }
 
   it "should allow dishes to be added" do
-    menu = Menu.new
-    menu.add(dish)
-    expect(menu.dishes).to eq [dish]
+    menu.add(salad_nicoise)
+    expect(menu.dishes).to eq [salad_nicoise]
   end
 
   it "should allow dishes to be removed" do
-    menu = Menu.new
-    menu.add(dish)
-    menu.remove(dish)
+    menu.add(beef_stroganoff)
+    menu.remove(beef_stroganoff)
     expect(menu.dishes).to eq []
+  end
 
+  it "should be possible to show the current menu" do
+    menu.add(insalata_caprese)
+    menu.add(beef_stroganoff)
+    expect(menu.dishes).to eq [insalata_caprese, beef_stroganoff]
   end
 
 end
