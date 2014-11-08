@@ -10,5 +10,9 @@ class Menu
     dishes << dish
   end
 
+  def remove(dish)
+    dishes.delete(dish)
+  end
+
 
 end
