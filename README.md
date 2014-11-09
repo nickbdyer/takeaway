@@ -3,11 +3,11 @@ Takeaway Challenge
 
 Week 2 Challenge at Makers Academy
 
-This challenge demonstrates use of OOD, OOP, Ruby, RSpec, Gems(Guard, Twilio)
+This challenge demonstrates use of TDD, OOD, OOP, Ruby, RSpec, Gems(Guard, Twilio)
 
-Update 9 Nov 13:00:
+Update 9 Nov 19:00:
 
-The takeaway class is taking on more responsibilities. It is becoming clear that this class needs to orchestra a lot of the functionality. 
+The class OrderDetails was not required. So has been removed. Also, the responsibilities of takeaway were reduced significantly from early versions. 
 
 Challenge
 ---------
@@ -34,7 +34,7 @@ From the domain model, I have extracted 6 or possibly 7 classes. They are:
 - Order
 - Customer
 - TextMessage
-- OrderDetails/LineItem??
+- ~~OrderDetails/LineItem??~~
 
 
 #### Class - Takeaway Restaurant
@@ -42,8 +42,8 @@ From the domain model, I have extracted 6 or possibly 7 classes. They are:
 Responsiblities          | Collaborators
 ---------------          | -------------
 Have Menu                | Customer
-Send Text Message        | Menu
-Create text message      | Message
+Create text message      | Menu
+                         | Message
                          | Order
     
 
@@ -89,14 +89,7 @@ List order details       | Customer
 Create Message           | Order
 
 
-#### Class - Order Details
-
-Responsiblities          | Collaborators
----------------          | -------------
-Unknown...               | Order
-                         | 
-                         | 
-
+~~#### Class - Order Details~~
 
 
 

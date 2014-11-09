@@ -9,7 +9,7 @@ class Order
   end
 
   def add(*dishes)
-   dishes.each { |dish| contents << dish } 
+    dishes.each { |dish| contents << dish } 
   end
 
   def remove(*dishes)
@@ -19,6 +19,5 @@ class Order
   def total
     contents.map(&:price).inject(:+)
   end
-
 
 end
