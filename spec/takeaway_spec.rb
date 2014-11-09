@@ -26,8 +26,9 @@ describe "Takeaway" do
   end
 
   it "should allow a message to be created and sent" do
+    the_chutney.add_menu dinner_menu
     expect(message).to receive(:send_text).with order
-    the_chutney.create(message_class, order)
+    the_chutney.create(message_class, order, 15)
   end
 
   it "should check that the payment is correct for the order" do
