@@ -16,4 +16,8 @@ class Takeaway
     orders << content.new(customer)
   end
 
+  def retrieve_order(customer)
+    orders.find { |order| order.customer == customer }
+  end
+
 end
