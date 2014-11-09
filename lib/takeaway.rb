@@ -15,16 +15,4 @@ class Takeaway
     confirmation.send_text(order)
   end
 
-
-
-  # def create_new(content, customer)
-  #   orders << content.new(customer)
-  # end
-
-  # def retrieve_order(customer)
-  #   orders.find { |order| order.customer == customer }
-  # end
-
-
-
 end
