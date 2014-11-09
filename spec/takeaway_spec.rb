@@ -2,14 +2,12 @@ require 'takeaway'
 
 describe "Takeaway" do
 
-  let(:the_chutney)       { Takeaway.new                            }
-  let(:dinner_menu)       { double :menu                            }
-  let(:order_class_rich)  { double :order_class, :new => order_rich }
-  let(:order_class_ben)   { double :order_class, :new => order_ben  }
-  let(:rich)              { double :customer                        }
-  let(:ben)               { double :customer                        }
-  let(:order_rich)        { double :order, customer: rich           }
-  let(:order_ben)         { double :order, customer: ben            }
+  let(:the_chutney)       { Takeaway.new                        }
+  let(:dinner_menu)       { double :menu                        }
+  let(:order_class)       { double :order_class, :new => order  }
+  let(:rich)              { double :customer                    }
+  let(:ben)               { double :customer                    }
+  let(:order)             { double :order                       }
 
 
   it "should not have a menu when initialized" do 
@@ -22,13 +20,14 @@ describe "Takeaway" do
   end
  
   it "should allow an order to be created" do
-    the_chutney.create_new(order_class_rich, rich)
-    expect(the_chutney.orders).to eq [order_rich]
+    the_chutney.create_new(order_class, rich)
+    expect(the_chutney.orders).to eq [order]
   end
 
   it "should allow an order to be retrieved by customer" do
-    the_chutney.create_new(order_class_rich, rich)
-    the_chutney.create_new(order_class_ben, ben)
+    order_rich = double :order, customer: rich 
+    order_ben = double :order, customer: ben 
+    the_chutney.orders << order_rich << order_ben
     expect(the_chutney.retrieve_order(rich)).to eq order_rich  
   end
 
