@@ -1,0 +1,14 @@
+pizza_exp = Takeaway.new
+pizza = Dish.new("Pizza", 5)
+lasagne = Dish.new("Lasagne", 5)
+insalata = Dish.new("Salad", 5)
+evening_menu = Menu.new
+evening_menu.add(pizza)
+evening_menu.add(lasagne)
+evening_menu.add(insalata)
+pizza_exp.add_menu(evening_menu)
+customer = Customer.new
+order = Order.new('Nick')
+hamburger = Dish.new("Hamburger", 6)
+order.add(pizza, insalata)
+customer.place_order(pizza_exp, order, 10, Message )

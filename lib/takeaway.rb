@@ -12,7 +12,7 @@ class Takeaway
 
   def create(content, order, payment)
     check_order(order, payment)
-    confirmation = content.new(order)
+    confirmation = content.new
     confirmation.send_text(order)
   end
 
