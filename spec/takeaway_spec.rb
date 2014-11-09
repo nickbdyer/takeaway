@@ -2,16 +2,17 @@ require 'takeaway'
 
 describe "Takeaway" do
 
-  let(:the_chutney)   { Takeaway.new                                           }
-  let(:dinner_menu)   { double :menu, dishes: [hamburger, salad]               } 
-  let(:order)         { double :order, total: 15, contents: [hamburger, salad] }  
-  let(:message_class) { double :message_class, :new => message                 }
-  let(:message)       { double :message                                        }
-  let(:rich)          { double :customer                                       } 
-  let(:ben)           { double :customer                                       }
-  let(:hamburger)     { double :dish                                           }
-  let(:salad)         { double :dish                                           }
-  let(:salmon)        { double :dish                                           }
+  let(:the_chutney)   { Takeaway.new                                                   }
+  let(:dinner_menu)   { double :menu, dishes: [hamburger, salad]                       } 
+  let(:order)         { double :order, total: 15, contents: [hamburger, salad]         }  
+  let(:bad_order)     { double :order, total: 15, contents: [hamburger, salad, salmon] }  
+  let(:message_class) { double :message_class, :new => message                         }
+  let(:message)       { double :message                                                }
+  let(:rich)          { double :customer                                               } 
+  let(:ben)           { double :customer                                               }
+  let(:hamburger)     { double :dish                                                   }
+  let(:salad)         { double :dish                                                   }
+  let(:salmon)        { double :dish                                                   }
 
 
 
@@ -40,6 +41,11 @@ describe "Takeaway" do
 
   it "should raise an error if the payment is incorrect" do
     expect{the_chutney.check_order(order, 13)}.to raise_error("Your payment was incorrect.")
+  end
+
+  it "should raise an error if the ordered dishes are not on the menu" do
+    the_chutney.add_menu dinner_menu
+    expect{the_chutney.check_order(bad_order, 15)}.to raise_error("Your order was invalid.")
   end
 
 end
