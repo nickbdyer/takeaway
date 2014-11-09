@@ -15,4 +15,15 @@ class Takeaway
     confirmation.send_text(order)
   end
 
+  def check_order(order, payment)
+  end
+
+  def payment_correct?(order, payment)
+    order.total == payment
+  end
+
+  def dishes_available?(order)
+    order.contents & menu.dishes == order.contents.uniq
+  end
+
 end
