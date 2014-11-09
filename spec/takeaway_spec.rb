@@ -38,4 +38,8 @@ describe "Takeaway" do
     expect(the_chutney.dishes_available?(order)).to be true
   end
 
+  it "should raise an error if the payment is incorrect" do
+    expect{the_chutney.check_order(order, 13)}.to raise_error("Your payment was incorrect.")
+  end
+
 end

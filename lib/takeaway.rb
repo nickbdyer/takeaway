@@ -16,6 +16,7 @@ class Takeaway
   end
 
   def check_order(order, payment)
+    raise "Your payment was incorrect." if !payment_correct?(order, payment)
   end
 
   def payment_correct?(order, payment)
