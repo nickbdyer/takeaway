@@ -2,9 +2,10 @@ require 'order'
 
 describe "Order" do
 
-  let(:order) { Order.new }
+  let(:order) { Order.new(nick) }
   let(:ham_and_cheese_toastie) { double :dish, price: 5 }
   let(:penne_arrabbiata) { double :dish, price: 6 }
+  let(:nick) { double :customer }
 
   it "should allow dishes to be added" do
     order.add(ham_and_cheese_toastie)
@@ -38,6 +39,11 @@ describe "Order" do
     order.add penne_arrabbiata, ham_and_cheese_toastie
     order.remove penne_arrabbiata, ham_and_cheese_toastie
     expect(order.contents).to eq []
+  end
+
+  it "should be initialized with a customer reference" do
+    order = Order.new(nick)
+    expect(order.customer).to eq nick
   end
 
 end

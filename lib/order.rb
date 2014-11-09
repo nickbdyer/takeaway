@@ -1,8 +1,10 @@
 class Order
 
   attr_reader :contents
+  attr_reader :customer
 
-  def initialize
+  def initialize(customer)
+    @customer = customer
     @contents = []
   end
 
@@ -17,6 +19,6 @@ class Order
   def total
     contents.map(&:price).inject(:+)
   end
-  
+
 
 end
