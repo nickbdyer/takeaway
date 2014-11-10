@@ -12,7 +12,7 @@ describe "Takeaway" do
   let(:hamburger)     { double :dish, name: "Hamburger"                                }
   let(:salad)         { double :dish, name: "Salad"                                    }
   let(:salmon)        { double :dish, name: "Salmon"                                   }
-
+  let(:client)        { double :client                                                 }
 
 
   it "should not have a menu when initialized" do 
@@ -26,9 +26,11 @@ describe "Takeaway" do
 
   it "should allow a message to be created and sent" do
     the_chutney.add_menu dinner_menu
-    expect(order).to receive(:customer)
-    the_chutney.create(order, 15)
+    allow(order).to receive(:customer)
+    expect(client).to receive_message_chain(:account,:messages,:create).and_return({})
+    the_chutney.send_text(order, client)
   end
+
 
   it "should check that the payment is correct for the order" do
     expect(the_chutney.payment_correct?(order, 15)).to be true
