@@ -1,12 +1,9 @@
 require 'twilio-ruby' 
  
-class Message
+module Message
 
-  def initialize
-    account_sid = ENV['TWILIO_AC'] 
-    auth_token = ENV['TWILIO_PS'] 
-    @client = Twilio::REST::Client.new account_sid, auth_token 
-  end
+    ACCOUNT_SID = ENV['TWILIO_AC'] 
+    AUTH_TOKEN  = ENV['TWILIO_PS'] 
 
   def print_list(order)
     bill = Hash.new 0
@@ -16,6 +13,7 @@ class Message
   end
 
   def send_text(order)
+    @client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN 
     @client.messages.create({
       :from => '+441163261399', 
       :to => '07734 070002', 

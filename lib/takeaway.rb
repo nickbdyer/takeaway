@@ -1,4 +1,8 @@
+require_relative 'message'
+
 class Takeaway
+
+  include Message
 
   attr_reader :menu
 
