@@ -14,10 +14,9 @@ class Takeaway
     @menu = menu
   end
 
-  def create(content, order, payment)
+  def create(order, payment)
     check_order(order, payment)
-    confirmation = content.new
-    confirmation.send_text(order)
+    send_text(order)
   end
 
   def check_order(order, payment)

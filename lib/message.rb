@@ -14,7 +14,7 @@ module Message
 
   def send_text(order)
     @client = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN 
-    @client.messages.create({
+    @client.account.messages.create({
       :from => '+441163261399', 
       :to => '07734 070002', 
       :body => "Hello #{order.customer}, your order will be with you in one hour!\nPayment of £#{order.total} has been taken.\nOrder Details: #{print_list(order)}", 

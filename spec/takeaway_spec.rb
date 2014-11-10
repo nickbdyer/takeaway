@@ -6,13 +6,12 @@ describe "Takeaway" do
   let(:dinner_menu)   { double :menu, dishes: [hamburger, salad]                       } 
   let(:order)         { double :order, total: 15, contents: [hamburger, salad]         }  
   let(:bad_order)     { double :order, total: 15, contents: [hamburger, salad, salmon] }  
-  let(:message_class) { double :message_class, :new => message                         }
   let(:message)       { double :message                                                }
   let(:rich)          { double :customer                                               } 
   let(:ben)           { double :customer                                               }
-  let(:hamburger)     { double :dish                                                   }
-  let(:salad)         { double :dish                                                   }
-  let(:salmon)        { double :dish                                                   }
+  let(:hamburger)     { double :dish, name: "Hamburger"                                }
+  let(:salad)         { double :dish, name: "Salad"                                    }
+  let(:salmon)        { double :dish, name: "Salmon"                                   }
 
 
 
@@ -27,8 +26,8 @@ describe "Takeaway" do
 
   it "should allow a message to be created and sent" do
     the_chutney.add_menu dinner_menu
-    expect(message).to receive(:send_text).with order
-    the_chutney.create(message_class, order, 15)
+    expect(order).to receive(:customer)
+    the_chutney.create(order, 15)
   end
 
   it "should check that the payment is correct for the order" do
