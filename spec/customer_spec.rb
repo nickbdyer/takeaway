@@ -7,7 +7,6 @@ describe "Customer" do
   let(:my_order)      { double :order         }
 
   it "should be able to place an order" do
-    # allow(my_order).to receive(:total).and_return 15
     expect(dominos).to receive(:create).with(my_order, 15)
     nick.place_order(dominos, my_order, 15)
   end
