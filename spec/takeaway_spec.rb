@@ -9,8 +9,8 @@ describe "Takeaway" do
   let(:message)       { double :message                                                }
   let(:rich)          { double :customer                                               } 
   let(:ben)           { double :customer                                               }
-  let(:hamburger)     { double :dish, name: "Hamburger"                                }
-  let(:salad)         { double :dish, name: "Salad"                                    }
+  let(:hamburger)     { double :dish, name: "Hamburger", price: 7.5                    }
+  let(:salad)         { double :dish, name: "Salad", price: 7.5                        }
   let(:salmon)        { double :dish, name: "Salmon"                                   }
   let(:client)        { double :client                                                 }
 
