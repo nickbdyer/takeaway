@@ -14,7 +14,7 @@ module Message
   #   text_body
   # end
 
-   def print_list_with_price(order)
+  def print_list_with_price(order)
     text_body = "Hello #{order.customer}, your order will be with you in one hour!\nPayment of £#{order.total} has been taken.\nOrder Details:"
     bill = Hash.new 0
     order.contents.each { |dish| bill[dish] += 1 }
