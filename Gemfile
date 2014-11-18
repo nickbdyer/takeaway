@@ -1,5 +1,9 @@
-group :development do
+source "http://rubygems.org"
+
+  gem 'twilio-ruby'
+
+group :development, :test do
   gem 'guard'
   gem 'guard-rspec'
-  gem 'twilio-ruby'
+  gem 'rspec'
 end

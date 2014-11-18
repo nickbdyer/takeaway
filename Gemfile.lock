@@ -1,4 +1,5 @@
 GEM
+  remote: http://rubygems.org/
   specs:
     builder (3.2.2)
     celluloid (0.16.0)
@@ -59,4 +60,5 @@ PLATFORMS
 DEPENDENCIES
   guard
   guard-rspec
+  rspec
   twilio-ruby
