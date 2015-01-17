@@ -3,9 +3,9 @@ require 'menu'
 describe "Menu" do
 
   let(:menu) { Menu.new }
-  let(:salad_nicoise) { double :dish }
-  let(:beef_stroganoff) { double :dish }
-  let(:insalata_caprese) { double :dish }
+  let(:salad_nicoise) { double :dish, :class => Dish }
+  let(:beef_stroganoff) { double :dish, :class => Dish}
+  let(:insalata_caprese) { double :dish, :class => Dish }
 
   it "should allow dishes to be added" do
     menu.add(salad_nicoise)

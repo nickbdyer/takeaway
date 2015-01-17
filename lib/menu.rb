@@ -7,7 +7,7 @@ class Menu
   end
 
   def add(dish)
-    dishes << dish
+    dishes << dish if dish.class == Dish
   end
 
   def remove(dish)

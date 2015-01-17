@@ -19,6 +19,17 @@ Challenge
 - [x] Make sure that your Takeaway class is thoroughly tested and that you use mocks and/or stubs, as necessary to not to send texts when your tests are run
 - [x] However, if your Takeaway class is loaded into IRB and the order is placed, the text should actually be sent
 
+Running the Program
+-------------------
+
+```sh
+$ irb
+$ require('./irbsetup')
+```
+
+Since the Twilio secure keys are private, that aspect of the will not work
+outside of my laptop.
+
 Domain Model
 ------------
 
@@ -88,29 +99,13 @@ Send Message             | Takeaway
 List order details       | Customer
 Create Message           | Order
 
+###Lessons Learned
 
-~~#### Class - Order Details~~
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- This challenge was important because it allowed me to learn how to integrate
+  into an API. Fortunately Twilio's documentation is very good, so it was not
+  a big struggle to get it setup. 
+- While testing the app, it was important to prevent the app from sending text
+  messages. This was a useful lesson in providing additional layers of
+  abstraction, so that the interaction with Twilio was not a dependency of the
+  app. 
 
