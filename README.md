@@ -27,7 +27,7 @@ $ irb
 $ require('./irbsetup')
 ```
 
-Since the Twilio secure keys are private, that aspect of the will not work
+Since the Twilio secure keys are private, that aspect of the system will not work
 outside of my laptop.
 
 Domain Model
