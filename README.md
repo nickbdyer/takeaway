@@ -1,6 +1,8 @@
 Takeaway Challenge
 ==================
 
+[![Code Climate](https://codeclimate.com/github/nickbdyer/takeaway/badges/gpa.svg)](https://codeclimate.com/github/nickbdyer/takeaway)
+
 Week 2 Challenge at Makers Academy
 
 This challenge demonstrates use of TDD, OOD, OOP, Ruby, RSpec, Gems(Guard, Twilio)
