@@ -1,3 +1,4 @@
+require 'spec_helper'
 describe "Message" do
 
   let(:message) { double :message }

@@ -1,7 +1,7 @@
 Takeaway Challenge
 ==================
 
-[![Code Climate](https://codeclimate.com/github/nickbdyer/takeaway/badges/gpa.svg)](https://codeclimate.com/github/nickbdyer/takeaway)
+[![Code Climate](https://codeclimate.com/github/nickbdyer/takeaway/badges/gpa.svg)](https://codeclimate.com/github/nickbdyer/takeaway) [![Test Coverage](https://codeclimate.com/github/nickbdyer/takeaway/badges/coverage.svg)](https://codeclimate.com/github/nickbdyer/takeaway)
 
 Week 2 Challenge at Makers Academy
 
