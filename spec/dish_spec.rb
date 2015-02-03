@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'dish'
 
-describe "Dish" do
+describe Dish do
 
   it "should be initialized with a name" do
     meal = Dish.new("Hamburger", 7.50)

@@ -10,7 +10,7 @@ class Takeaway
     @menu = menu
   end
 
-  def create(order, payment)
+  def process(order, payment)
     check_order(order, payment)
     send_text(order)
   end

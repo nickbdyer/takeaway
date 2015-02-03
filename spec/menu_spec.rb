@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'menu'
 
-describe "Menu" do
+describe Menu do
 
   let(:menu) { Menu.new }
   let(:salad_nicoise) { double :dish, :class => Dish }

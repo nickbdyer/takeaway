@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'order'
 
-describe "Order" do
+describe Order do
 
   let(:order) { Order.new(nick) }
   let(:ham_and_cheese_toastie) { double :dish, price: 5 }

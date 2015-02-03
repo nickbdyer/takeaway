@@ -1,14 +1,16 @@
 require 'spec_helper'
-describe "Message" do
+require 'message'
 
-  let(:message) { double :message }
-  let(:order)   { double :order }  
-  let(:client)  { double :client }
+shared_examples "message" do 
 
+  let(:messagesender) { described_class.new }
+  let(:order)         { double :order }  
+  let(:client)        { double :client }
 
   it "should send a text" do
-    expect(message).to receive(:send_text).and_return "Message sent"
-    message.send_text(order, client)
+    allow(order).to receive(:customer)
+    expect(client).to receive_message_chain(:account,:messages,:create)
+    messagesender.send_text(order, client)
   end
 
 end

@@ -1,7 +1,9 @@
 require 'spec_helper'
 require 'takeaway'
 
-describe "Takeaway" do
+describe Takeaway do
+
+  include_examples "message"
 
   let(:the_chutney)   { Takeaway.new                                                   }
   let(:dinner_menu)   { double :menu, dishes: [hamburger, salad]                       } 
@@ -30,6 +32,13 @@ describe "Takeaway" do
     allow(order).to receive(:customer)
     expect(client).to receive_message_chain(:account,:messages,:create).and_return({})
     the_chutney.send_text(order, client)
+  end
+
+  it "should allow an order to be created" do
+    the_chutney.add_menu(dinner_menu)
+    allow(order).to receive(:customer)
+    expect(the_chutney).to receive(:send_text).with(order)
+    the_chutney.process(order, 15)
   end
 
 
